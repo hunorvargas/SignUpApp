@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -43,12 +42,13 @@ public class MainActivity extends AppCompatActivity {
                 fname1=getIntent().getStringExtra("fname");
                 lname1=getIntent().getStringExtra("lname");
 
-                System.out.printf("name %s",fname1);
+               // System.out.printf("name %s",fname1);
 
                 if(fname.getText().toString().equals(fname1) &&
                         lname.getText().toString().equals(lname1)) {
                     startActivity(new Intent(MainActivity.this, Profile.class));
                 }else{
+
                     fname.setError(" Frist name Problem");
                     lname.setError("Last name Problem");
 
