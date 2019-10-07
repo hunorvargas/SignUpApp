@@ -9,12 +9,12 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class Profile extends AppCompatActivity {
-
+private static Integer backnumber=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-        Button backButton = (Button) findViewById(R.id.backButton);
+        final Button backButton = (Button) findViewById(R.id.backButton);
         final TextView firstname = (TextView) findViewById(R.id.firstNameText1);
         final TextView lastname = (TextView) findViewById(R.id.lastNameText1);
         final TextView depname = (TextView) findViewById(R.id.depNameText1);
@@ -32,7 +32,10 @@ public class Profile extends AppCompatActivity {
 
         backButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(Profile.this, MainActivity.class));
+                ++backnumber;
+                Intent mainactivityintent=new Intent(Profile.this, MainActivity.class);
+                onPause();
+                mainactivityintent.putExtra("backnumber",backnumber);
 
             }
         });

@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class Register extends AppCompatActivity {
-
+private static Integer registnumber=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +29,11 @@ public class Register extends AppCompatActivity {
                 profileintent.putExtra("fname",fname);
                 profileintent.putExtra("lname",lname);
                 profileintent.putExtra("dname",dname);
+
+
+                ++registnumber;
+                profileintent.putExtra("regnum",registnumber);
+
                 startActivity(profileintent);
             }
         });
